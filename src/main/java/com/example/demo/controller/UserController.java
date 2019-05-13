@@ -26,7 +26,7 @@ public class UserController {
     @RequestMapping(value = "/allUsers")
     public String list(Model model, @RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "5") Integer pageSize) {
 
-        //引入分页查询，使用PageHelper分页功能在查询之前传入当前页，然后多少 记录
+        //引入分页查询，使用PageHelper分页功能在查询之前传入当前页，然后多少记录
         PageHelper.startPage(pageNum, pageSize);
         //startPage后紧跟的这个查询就是分页查询
         List<User> users = userMapper.getAllUsers();
